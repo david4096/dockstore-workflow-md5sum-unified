@@ -9,5 +9,9 @@ install:
 - docker version
 - pip2.7 install --user setuptools==36.5.0
 - pip2.7 install --user cwl-runner cwltool==1.0.20170828135420 schema-salad==2.6.20170806163416 avro==1.8.1 ruamel.yaml==0.14.12 requests==2.18.4
+- wget https://github.com/broadinstitute/cromwell/releases/download/29/cromwell-29.jar
 
 script: 
+- cwltool checker_workflow_wrapping_workflow.cwl md5sum.json
+- cwltool checker_workflow_wrapping_tool.cwl md5sum.json
+- java -jar cromwell-29.jar run --inputs md5sum.wdl.json checker.wdl
