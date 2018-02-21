@@ -10,6 +10,9 @@ dct:contributor:
   foaf:name: Denis Yuen
   foaf:mbox: mailto:denis.yuen@oicr.on.ca
 
+requirements:
+  - class: SubworkflowFeatureRequirement
+
 inputs:
   input_file: File
 
@@ -20,7 +23,7 @@ outputs:
 
 steps:
   md5sum:
-    run: md5sum/dockstore-tool-md5sum.cwl
+    run: md5sum/md5sum.cwl
     in:
       input_file: input_file
     out: [output_file]
@@ -29,3 +32,6 @@ steps:
     in: 
       input_file: md5sum/output_file
     out: [results_file]
+
+doc: | 
+  This demonstrates how to wrap a "real" workflow with a checker workflow that runs both the tool and a tool that performs verification of results
