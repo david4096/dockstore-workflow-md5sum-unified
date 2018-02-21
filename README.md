@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dockstore-testing/dockstore-workflow-md5sum-unified.svg?branch=develop)](https://travis-ci.org/dockstore-testing/dockstore-workflow-md5sum-unified)
+
 To demonstrate the checker workflow proposal
 
 ## CWL 
